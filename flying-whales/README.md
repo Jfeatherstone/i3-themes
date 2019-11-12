@@ -1,8 +1,8 @@
 # Flying Whales
 
-![flying-whales-empty](https://raw.githubusercontent/Jfeatherstone/i3-themes/master/flying-whales/flying-whales_empty.png)
+![flying-whales-empty](https://raw.githubusercontent.com/Jfeatherstone/i3-themes/master/flying-whales/flying-whales_empty.png)
 
-![flying-whales-busy](https://raw.githubusercontent/Jfeatherstone/i3-themes/master/flying-whales/flying-whales_busy.png)
+![flying-whales-busy](https://raw.githubusercontent.com/Jfeatherstone/i3-themes/master/flying-whales/flying-whales_busy.png)
 
 This is a simple i3 rice that I am currently using and developing for my laptop. Some keybinds or scripts may need to be edited slightly to work on another machine.
 
