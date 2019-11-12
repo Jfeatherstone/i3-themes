@@ -5,4 +5,4 @@ This is a collection of my i3 themes that I've either created or modified from o
 ## Screenshots
 For more detailed information, see each individual theme!
 
-[flying-whales](https://raw.githubusercontent.com/Jfeatherstone/i3-themes/master/flying-whales/flying-whales_empty.png)
+![flying-whales](https://raw.githubusercontent.com/Jfeatherstone/i3-themes/master/flying-whales/flying-whales_empty.png)
