@@ -100,8 +100,8 @@ content = 
 content-padding = 2
 content-background = ${color.shade1}
 content-foreground = ${color.fg}
-click-left = ~/./rofi
-click-right = ~/./rofi
+click-left = ~/.config/rofi/./rofi_script
+click-right = ~/.config/rofi/./rofi_script
 
 [module/i3]
 type = internal/i3
