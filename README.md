@@ -7,3 +7,7 @@ For more detailed information, see each individual theme!
 
 #### Flying-Whales
 ![flying-whales](https://raw.githubusercontent.com/Jfeatherstone/i3-themes/master/flying-whales/flying-whales_busy.png)
+
+
+#### Michaelsoft
+![michaelsoft](https://raw.githubusercontent.com/Jfeatherstone/i3-themes/master/michaelsoft/michaelsoft_busy.png)
