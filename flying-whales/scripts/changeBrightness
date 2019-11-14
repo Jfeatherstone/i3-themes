@@ -1,0 +1,49 @@
+#!/bin/bash
+# changeBrightness
+
+# First argument can be: add, sub, set
+
+brightness="$(xrandr --current --verbose | grep Brightness | sed 's/ //g')"
+
+# Take the last 4 characters
+brightness=${brightness:12:5}
+
+# Some constant message ID
+msgID="103824"
+
+if [ $1 == "add" ]; then
+
+    newBrightness="$(echo "$brightness + $2"| bc)"
+
+    if [ "$(echo "$newBrightness > 1.0" | bc)" == 1 ]; then
+        newBrightness=1.0
+    fi
+
+    xrandr --output eDP-1-1 --brightness $newBrightness
+
+    newBrightness="$(echo $(echo "$newBrightness * 100" | bc) | sed -e 's/\.[0-9]*//')"
+
+    dunstify -a "changeBrightness" -u low -i laptop -r $msgID "Brightness: $newBrightness%" ""
+
+elif [ $1 == "sub" ]; then
+
+    newBrightness="$(echo "$brightness - $2"| bc)"
+
+    if [ "$(echo "$newBrightness < 0.0" | bc)" == 1 ]; then
+        newBrightness="0.0"
+    fi
+
+    xrandr --output eDP-1-1 --brightness $newBrightness
+
+    newBrightness="$(echo $(echo "$newBrightness * 100" | bc) | sed -e 's/\.[0-9]*//')"
+
+    dunstify -a "changeBrightness" -u low -i laptop -r $msgID "Brightness: $newBrightness%" ""
+
+elif [ $1 == "set" ]; then
+
+    xrandr --output eDP-1-1 --brightness $2
+    dunstify -a "changeBrightness" -u low -i laptop -r $msgID "Brightness: $2" ""
+else
+    echo "Invalid input, see /usr/bin/changeBrightness for more info"
+fi
+
