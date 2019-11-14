@@ -28,4 +28,10 @@ cp /usr/bin/changeBrightness scripts/
 cp ~/.config/i3/wallpaper.jpg i3/
 
 # Copy alacritty
-cp ~/.config/alacritty/alacritty.yml alacritty/alacritty.yml
+cp ~/.config/alacritty/alacritty.yml alacritty/
+
+# Copy galendae
+cp ~/.config/galendae/config galendae/
+
+# Copy compton
+cp ~/.config/compton/compton.conf compton/

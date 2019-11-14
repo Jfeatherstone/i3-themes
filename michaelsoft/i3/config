@@ -34,9 +34,6 @@ exec --no-startup-id nm-applet
 ### Volume control
 #######################
 
-# Path to volume control, without trailing slash
-set $volumepath ~/i3-volume
-
 # Command for the status line
 #   ie: i3blocks, i3status
 set $statuscmd i3status
@@ -45,9 +42,6 @@ set $statuscmd i3status
 #   i3blocks uses SIGRTMIN+10 by default
 #   i3status uses SIGUSR1 by default
 set $statussig SIGUSR1
-
-# Amount to increase/decrease volume as a percentage
-set $volumestep 5
 
 # alsa-utils settings
 #
@@ -59,8 +53,8 @@ set $volumestep 5
 #set $alsacard 1
 
 # append "-c $alsacard" without quotes to override default card
-bindsym XF86AudioRaiseVolume exec changeVolume 5dB+ unmute
-bindsym XF86AudioLowerVolume exec changeVolume 5dB- unmute
+bindsym XF86AudioRaiseVolume exec changeVolume +10%
+bindsym XF86AudioLowerVolume exec changeVolume -10%
 bindsym XF86AudioMute        exec changeVolume toggle
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -86,6 +80,11 @@ gaps outer 10
 # Set inner gaps
 gaps inner 10
 
+# Since we have our polybar bars at top and bottom, we need some extra space
+gaps top 38
+
+gaps bottom 38
+
 #########################
 ### CORE KEYBINDS
 #########################
@@ -97,7 +96,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 
 # start rofi (a program launcher)
-bindsym $mod+space exec ~/./rofi
+bindsym $mod+space exec ~/.config/rofi/./rofi_script
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -252,10 +251,16 @@ exec compton -b
 exec dunst
 
 # Start polybar
-exec polybar -c /home/jack/.config/polybar/config main
+exec polybar -c ~/.config/polybar/config top
+exec polybar -c ~/.config/polybar/config bottom
 
 # Start lightscreen
 exec lightscreen -h
 
 # Make all yad windows float
 for_window [title="yad_powermenu"] floating enable
+for_window [title="yad_vpnmenu"] floating enable
+
+
+# And play the windows xp startup sound of course
+exec paplay ~/.config/i3/xp_startup.ogg
