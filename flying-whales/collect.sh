@@ -26,3 +26,6 @@ cp /usr/bin/changeBrightness scripts/
 
 # Copy the wallpaper
 cp ~/.config/i3/wallpaper.jpg i3/
+
+# Copy alacritty
+cp ~/.config/alacritty/alacritty.yml alacritty/alacritty.yml

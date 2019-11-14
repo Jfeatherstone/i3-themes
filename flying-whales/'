@@ -62,12 +62,6 @@ if [ ! -e ~/.config/dunst ]; then
     echo ""
 fi
 
-if [ ! -e ~/.config/alacritty ]; then
-    mkdir ~/.coinfig/alacritty
-    echo "Created ~/.config/alacritty directory"
-    echo ""
-fi
-
 # i3-config
 if [ -e ~/.config/i3/config ]; then
     # Move the old file
