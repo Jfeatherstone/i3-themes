@@ -141,6 +141,8 @@ else
     cp alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
     echo "alacritty.yml installed to ~/.config/alacritty/alacritty.yml"
     echo ""
+fi
+
 echo "Installation completed! This directory can now be safely deleted!"
 echo "If you have any issues with my theme, or want to recommend edits, please submit an issue on the Github page"
 echo "https://github.com/Jfeatherstone/i3-themes"
