@@ -5,13 +5,15 @@
 # Must be run as su since it adds the commands changeVolume and changeBrightness to /usr/bin
 
 # Things that are installed in this file:
-# changeBrightness -> /usr/bin/ (doesn't overwrite)
-# changeVolume -> /usr/bin/ (doesn't overwrite)
-# i3-config -> ~/.config/i3/config (preserves old config in config.old if it exists)
-# wallpaper.jpg -> ~/.config/i3/config (preserves old image in wallpaper.jpg.old if it exists)
-# dunstrc -> ~/.config/dunst/dunstrc (preserves old config in dunstrc.old if it exists)
-# ib.rasi -> ~/.config/rofi/ib.rasi (preserves old config in ib.rasi.old if it exists)
-# rofi_script -> ~/.config/rofi/rofi_script (preserves old script in rofi_script.old if it exists)
+# scripts/changeBrightness -> /usr/bin/ (doesn't overwrite)
+# scripts/changeVolume -> /usr/bin/ (doesn't overwrite)
+# i3/config -> ~/.config/i3/config (preserves old config in config.old if it exists)
+# i3/wallpaper.jpg -> ~/.config/i3/config (preserves old image in wallpaper.jpg.old if it exists)
+# dunst/dunstrc -> ~/.config/dunst/dunstrc (preserves old config in dunstrc.old if it exists)
+# rofi/ib.rasi -> ~/.config/rofi/ib.rasi (preserves old config in ib.rasi.old if it exists)
+# rofi/rofi_script -> ~/.config/rofi/rofi_script (preserves old script in rofi_script.old if it exists)
+# compton/compton.conf -> ~/.config/compton/compton.conf (preserves old config in compton.conf.old if it exists)
+# galendae/config -> ~/.config/galendae/config (preserves old config in config.old if it exists)
 
 
 # changeBrightness
@@ -67,6 +69,19 @@ if [ ! -e ~/.config/alacritty ]; then
     echo "Created ~/.config/alacritty directory"
     echo ""
 fi
+
+if [ ! -e ~/.config/galendae ]; then
+    mkdir ~/.coinfig/galendae
+    echo "Created ~/.config/galendae directory"
+    echo ""
+fi
+
+if [ ! -e ~/.config/compton ]; then
+    mkdir ~/.coinfig/compton
+    echo "Created ~/.config/compton directory"
+    echo ""
+fi
+
 
 # i3-config
 if [ -e ~/.config/i3/config ]; then
@@ -140,6 +155,31 @@ if [ -e ~/.config/alacritty/alacritty.yml ]; then
 else  
     cp alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
     echo "alacritty.yml installed to ~/.config/alacritty/alacritty.yml"
+    echo ""
+fi
+
+# Galendae
+if [ -e ~/.config/galendae/config ]; then
+    mv ~/.config/galendae/config ~/.config/galendae/config.old
+    cp galendae/config ~/.config/galendae/config
+    echo "galendae config installed to ~/.config/galendae/config (old config moved to config.old)"
+    ehco ""
+else
+    cp galendae/config ~/.config/galendae/config
+    echo "galendae config installed to ~/.config/galendae/config"
+    echo ""
+fi
+
+
+# Compton
+if [ -e ~/.config/compton/compton.conf ]; then
+    mv ~/.config/compton/compton.conf ~/.config/compton/compton.conf
+    cp compton/compton.conf ~/.config/compton/compton.conf
+    echo "compton config installed to ~/.config/compton/compton.conf (old config moved to compton.conf.old)"
+    ehco ""
+else    
+    cp compton/compton.conf ~/.config/compton/compton.conf
+    echo "compton config installed to ~/.config/compton/compton.conf"
     echo ""
 fi
 

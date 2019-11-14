@@ -15,7 +15,8 @@
 - Python >= 3.7
 - dunst
 - yad
-
+- galendae
+- compton
 
 ### Installation
 
