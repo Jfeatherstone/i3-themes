@@ -15,7 +15,7 @@ cp -r ~/.config/polybar/ .
 cp ~/.config/dunst/dunstrc dunst/
 
 # Copy rofi config
-cp ~/.config/rofi/ib.rasi rofi/
+cp ~/.config/rofi/ribbon.rasi rofi/
 
 # Copy rofi script
 cp ~/.config/rofi/rofi_script rofi/

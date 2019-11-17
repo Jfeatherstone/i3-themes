@@ -10,7 +10,7 @@
 # i3/config -> ~/.config/i3/config (preserves old config in config.old if it exists)
 # i3/wallpaper.jpg -> ~/.config/i3/config (preserves old image in wallpaper.jpg.old if it exists)
 # dunst/dunstrc -> ~/.config/dunst/dunstrc (preserves old config in dunstrc.old if it exists)
-# rofi/ib.rasi -> ~/.config/rofi/ib.rasi (preserves old config in ib.rasi.old if it exists)
+# rofi/ribbon.rasi -> ~/.config/rofi/ib.rasi (preserves old config in ib.rasi.old if it exists)
 # rofi/rofi_script -> ~/.config/rofi/rofi_script (preserves old script in rofi_script.old if it exists)
 # compton/compton.conf -> ~/.config/compton/compton.conf (preserves old config in compton.conf.old if it exists)
 # galendae/config -> ~/.config/galendae/config (preserves old config in config.old if it exists)
@@ -122,15 +122,15 @@ else
     echo ""
 fi
 
-# ib.rasi (rofi config)
+# ribbon.rasi (rofi config)
 if [ -e ~/.config/rofi/ib.rasi ]; then
-    mv ~/.config/rofi/ib.rasi ~/.config/rofi/ib.rasi.old
-    cp rofi/ib.rasi ~/.config/rofi/ib.rasi
-    echo "ib.rasi installed to ~/.config/rofi/ib.rasi (old file moved to ib.rasi.old)"
+    mv ~/.config/rofi/ribbon.rasi ~/.config/rofi/ribbon.rasi.old
+    cp rofi/ribbon.rasi ~/.config/rofi/ribbon.rasi
+    echo "ribbon.rasi installed to ~/.config/rofi/ribbon.rasi (old file moved to ribbon.rasi.old)"
     echo ""
 else
-    cp rofi/ib.rasi ~/.config/rofi/ib.rasi
-    echo "ib.rasi installed to ~/.config/rofi/ib.rasi"
+    cp rofi/ribbon.rasi ~/.config/rofi/ribbon.rasi
+    echo "ribbon.rasi installed to ~/.config/rofi/ribbon.rasi"
     echo ""
 fi
 
