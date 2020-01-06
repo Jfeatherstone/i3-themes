@@ -264,3 +264,7 @@ for_window [title="yad_vpnmenu"] floating enable
 
 # And play the windows xp startup sound of course
 exec paplay ~/.config/i3/xp_startup.ogg
+
+
+# Temporary window exemption for a programming
+for_window [title="cpp_test"] floating enable

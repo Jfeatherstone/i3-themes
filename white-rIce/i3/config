@@ -34,9 +34,6 @@ exec --no-startup-id nm-applet
 ### Volume control
 #######################
 
-# Path to volume control, without trailing slash
-set $volumepath ~/i3-volume
-
 # Command for the status line
 #   ie: i3blocks, i3status
 set $statuscmd i3status
@@ -45,9 +42,6 @@ set $statuscmd i3status
 #   i3blocks uses SIGRTMIN+10 by default
 #   i3status uses SIGUSR1 by default
 set $statussig SIGUSR1
-
-# Amount to increase/decrease volume as a percentage
-set $volumestep 5
 
 # alsa-utils settings
 #
@@ -85,6 +79,11 @@ gaps outer 10
 
 # Set inner gaps
 gaps inner 10
+
+# Since we have our polybar bars at top and bottom, we need some extra space
+gaps top 38
+
+gaps bottom 38
 
 #########################
 ### CORE KEYBINDS
@@ -243,7 +242,7 @@ bindsym $mod+r mode "resize"
 
 
 # Set the background image using feh
-exec --no-startup-id feh --bg-center ~/.config/i3/wallpaper.jpg
+exec --no-startup-id feh --bg-scale ~/.config/i3/wallpaper.jpg
 
 # Start compton, the compositor, so that transparency works
 exec compton -b
@@ -252,7 +251,8 @@ exec compton -b
 exec dunst
 
 # Start polybar
-exec polybar -c /home/jack/.config/polybar/config main
+exec polybar -c ~/.config/polybar/config top
+exec polybar -c ~/.config/polybar/config bottom
 
 # Start lightscreen
 exec lightscreen -h
@@ -260,3 +260,7 @@ exec lightscreen -h
 # Make all yad windows float
 for_window [title="yad_powermenu"] floating enable
 for_window [title="yad_vpnmenu"] floating enable
+
+
+# And play the windows xp startup sound of course
+exec paplay ~/.config/i3/xp_startup.ogg

@@ -1,0 +1,267 @@
+;==========================================================
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;			https://github.com/polybar/polybar
+;==========================================================
+
+[color]
+
+trans = #00000000
+white = #FFFFFF
+black = #000000
+
+bg = #ca1252aa
+bg-alt = #000000
+fg = #FAF4FA
+fg-alt = #A9ABB0
+fg-hl = #8EB72A
+acolor = #FFFFFF
+curgent = #EF5350
+coccupied = #42A5F5
+
+shade1 = #aa4F6719
+shade2 = #AD1457
+shade3 = #C2185B
+shade4 = #D81B60
+shade5 = #E91E63
+shade6 = #EC407A
+shade7 = #F06292
+shade8 = #F48FB1
+ashade8 = #2C2C2C
+
+## Material Colors
+
+red = #e53935
+pink = #d81b60
+purple = #8e24aa
+deep-purple = #5e35b1
+indigo = #3949ab
+blue = #1e88e5
+light-blue = #039be5
+cyan = #00acc1
+teal = #00897b
+green = #43a047
+light-green = #7cb342
+lime = #c0ca33
+yellow = #fdd835
+amber = #ffb300
+orange = #fb8c00
+deep-orange = #f4511e
+brown = #6d4c41
+grey = #757575
+blue-gray = #546e7a
+
+;==========================================================
+
+[constants]
+padding = 1
+
+[bar/top]
+background            = ${color.bg}
+border-transparent    = true
+bottom                = false
+cursor-click          = pointer
+fixed-center          = true
+foreground            = ${color.fg}
+height                = 30
+line-color            = #f00
+line-size             = 0
+module-margin-left    = 0
+module-margin-right   = 0
+monitor               = DP-1-1
+monitor-fallback      = eDP-1-1
+offset-x              = 30%:-16
+offset-y              = 1%
+override-redirect     = true
+radius                = 15
+scroll-down           = i3wm-wsprev
+scroll-up             = i3wm-wsnext
+width                 = 40%
+
+font-0 = "Fantasque Sans Mono:pixelsize=12;1"
+font-1 = "Iosevka Nerd Font:pixelsize=18;3"
+
+modules-center      = workspaces
+modules-right       = pkg battery
+modules-left        = volume
+
+[bar/bottom]
+inherits middle
+
+background            = ${color.bg}
+border-transparent    = true
+bottom                = false
+cursor-click          = pointer
+fixed-center          = true
+foreground            = ${color.fg}
+height                = 30
+line-color            = #f00
+line-size             = 0
+module-margin-left    = 0
+module-margin-right   = 0
+monitor               = DP-1-1
+monitor-fallback      = eDP-1-1
+offset-x              = 25%:-16
+offset-y              = 96.5%
+override-redirect     = true
+radius                = 15
+scroll-down           = i3wm-wsprev
+scroll-up             = i3wm-wsnext
+width                 = 50%
+
+font-0 = "Fantasque Sans Mono:pixelsize=12;1"
+font-1 = "Iosevka Nerd Font:pixelsize=18;3"
+
+modules-left = internal-network
+modules-center = date calendar
+modules-right = spotify
+
+;===================================
+;       MODULES
+;===================================
+
+[module/workspaces]
+type = internal/xworkspaces
+pin-workspaces = false
+enable-click = true
+enable-scroll = true
+format-padding = 0
+
+icon-0 = 1;
+icon-1 = 2;
+icon-2 = 3;
+icon-3 = 4;
+icon-4 = 5;
+icon-5 = 6;
+icon-6 = 7;
+icon-7 = 8;
+icon-8 = 9;
+icon-9 = 10;
+icon-default =
+
+format = <label-state>
+label-active = %icon%
+label-occupied = %icon%
+label-urgent = %icon%
+label-empty = %icon%
+format-background = ${color.bg}
+
+label-occupied-padding = 1
+label-empty-padding = 1
+label-urgent-padding = 1
+label-active-padding = 1
+
+label-active-foreground = ${color.fg-hl}
+;label-urgent-foreground = ${color.curgent}
+;label-empty-foreground = ${color.fg}
+;label-occupied-foreground = ${color.coccupied}
+
+;label-active-underline = ${color.acolor}
+;label-urgent-underline = ${color.curgent}
+;label-occupied-underline = ${color.coccupied}
+
+
+[module/volume]
+type = internal/pulseaudio
+format-volume = <ramp-volume> <label-volume>
+format-volume-padding = 2
+format-volume-background = ${color.shade1}
+;label-volume = %percentage%%
+label-muted = "婢"
+label-muted-background = ${color.shade1}
+label-muted-padding = 2
+
+ramp-volume-0 = 奄
+ramp-volume-1 = 奄
+ramp-volume-2 = 奔
+ramp-volume-3 = 奔
+ramp-volume-4 = 墳
+ramp-volume-5 = 墳
+ramp-volume-6 = 墳
+
+[module/battery]
+type = internal/battery
+full-at = 99
+time-format = %H:%M
+battery = BAT1
+adapter = AC
+format-charging = <animation-charging> <label-charging>
+format-charging-background = ${color.shade1}
+format-charging-padding = 2
+label-charging = %percentage%%
+format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-background = ${color.shade1}
+format-discharging-padding = 2
+label-discharging = %percentage%%
+format-full = <label-full>
+
+format-full-prefix = " "
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-5 = 
+ramp-capacity-6 = 
+
+ramp-capacity-1-foreground = ${color.red}
+ramp-capacity-foreground   = ${color.fg}
+bar-capacity-width = 10
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+
+animation-charging-framerate = 1000
+
+[module/internal-network]
+type = internal/network
+interface = wlo1
+
+label-connected = 直 %essid% %local_ip%
+label-connected-padding = 1
+label-connected-background = ${color.shade1}
+label-connected-foreground = ${color.fg}
+
+label-disconnected = 睊 Not connected
+label-disconnected-padding = 2
+label-disconnected-background = ${color.shade1}
+label-disconnected-foreground = ${color.fg}
+
+[module/date]
+type = internal/date
+interval = 30
+label =  %time%
+label-padding = 1
+label-background = ${color.shade1}
+time =  %I:%M %p %Y-%m-%d
+time-alt =  %I:%M %p
+
+[module/calendar]
+type = custom/text
+content = 
+content-padding = 1
+content-background = ${color.shade1}
+content-foreground = ${color.fg}
+click-left = galendae -c ~/.config/galendae/config
+click-right = galendae -c ~/.config/galendae/config
+
+[module/spotify]
+type = custom/script
+interval = 1
+format-padding = 1
+format = <label>
+exec = python ~/.config/polybar/scripts/spotify.py -f '{artist}: {song}'
+format-background = ${color.shade1}
+
+[module/pkg]
+type = custom/script
+exec = ~/.config/polybar/scripts/./updates.sh
+format-background = ${color.bg}
+format-padding = 2
+tail = true
