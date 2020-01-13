@@ -81,16 +81,16 @@ gaps outer 10
 gaps inner 10
 
 # Since we have our polybar bars at top and bottom, we need some extra space
-gaps top 38
+#gaps top 38
 
-gaps bottom 38
+#gaps bottom 38
 
 #########################
 ### CORE KEYBINDS
 #########################
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec urxvt
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -242,17 +242,16 @@ bindsym $mod+r mode "resize"
 
 
 # Set the background image using feh
-exec --no-startup-id feh --bg-scale ~/.config/i3/wallpaper.jpg
+exec --no-startup-id feh --bg-center ~/.config/i3/wallpaper.jpg
 
 # Start compton, the compositor, so that transparency works
-exec compton -b
+exec picom -b
 
 # Start dunst, the notification manager
 exec dunst
 
-# Start polybar
-exec polybar -c ~/.config/polybar/config top
-exec polybar -c ~/.config/polybar/config bottom
+# Start conky
+exec conky
 
 # Start lightscreen
 exec lightscreen -h
@@ -261,6 +260,3 @@ exec lightscreen -h
 for_window [title="yad_powermenu"] floating enable
 for_window [title="yad_vpnmenu"] floating enable
 
-
-# And play the windows xp startup sound of course
-exec paplay ~/.config/i3/xp_startup.ogg
