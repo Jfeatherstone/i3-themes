@@ -7,15 +7,11 @@
 # Copy the newest version of my i3 config
 cp ~/.config/i3/config i3/
 
-# Copy all of the polybar scripts
-rm -r polybar/
-cp -r ~/.config/polybar/ .
-
 # Copy dunst config
 cp ~/.config/dunst/dunstrc dunst/
 
 # Copy rofi config
-cp ~/.config/rofi/ribbon.rasi rofi/
+cp ~/.config/rofi/chill.conf rofi/
 
 # Copy rofi script
 cp ~/.config/rofi/rofi_script rofi/
@@ -30,8 +26,11 @@ cp /usr/bin/changeBrightness scripts/
 # Copy the wallpaper
 cp ~/.config/i3/wallpaper.jpg i3/
 
-# Copy .Xresources for urxvt
-cp ~/.Xresources X/
-
 # Copy picom
 cp ~/.config/picom/picom.conf picom/
+
+# Copy the kitty config
+cp ~/.config/kitty/kitty.conf kitty/
+
+# Copy galendae config
+cp ~/.config/galendae/config galendae/config

@@ -14,7 +14,7 @@
 # rofi/rofi_script -> ~/.config/rofi/rofi_script (preserves old script in rofi_script.old if it exists)
 # compton/compton.conf -> ~/.config/compton/compton.conf (preserves old config in compton.conf.old if it exists)
 # galendae/config -> ~/.config/galendae/config (preserves old config in config.old if it exists)
-
+# kitty/kitty.conf -> ~/.config/kitty/kitty.conf (preserves old config in kitty.conf.old if it exists)
 
 # changeBrightness
 if [ -e /usr/bin/changeBrightness ]; then
@@ -64,24 +64,25 @@ if [ ! -e ~/.config/dunst ]; then
     echo ""
 fi
 
-if [ ! -e ~/.config/alacritty ]; then
-    mkdir ~/.coinfig/alacritty
-    echo "Created ~/.config/alacritty directory"
-    echo ""
-fi
-
 if [ ! -e ~/.config/galendae ]; then
     mkdir ~/.coinfig/galendae
     echo "Created ~/.config/galendae directory"
     echo ""
 fi
 
-if [ ! -e ~/.config/compton ]; then
-    mkdir ~/.coinfig/compton
-    echo "Created ~/.config/compton directory"
+if [ ! -e ~/.config/picom]; then
+    mkdir ~/.config/picom
+    echo "Created ~/.config/picom directory"
     echo ""
 fi
 
+if [ ! -e ~/.config/kitty]; then
+    mkdir ~/.config/kitty
+    echo "Created ~/.config/kitty directory"
+    echo ""
+fi
+
+# Now we actually move things
 
 # i3-config
 if [ -e ~/.config/i3/config ]; then
@@ -122,15 +123,15 @@ else
     echo ""
 fi
 
-# ribbon.rasi (rofi config)
-if [ -e ~/.config/rofi/ib.rasi ]; then
-    mv ~/.config/rofi/ribbon.rasi ~/.config/rofi/ribbon.rasi.old
-    cp rofi/ribbon.rasi ~/.config/rofi/ribbon.rasi
-    echo "ribbon.rasi installed to ~/.config/rofi/ribbon.rasi (old file moved to ribbon.rasi.old)"
+# chill.conf (rofi config)
+if [ -e ~/.config/rofi/chill.conf ]; then
+    mv ~/.config/rofi/chill.conf ~/.config/rofi/chill.conf.old
+    cp rofi/chill.conf ~/.config/rofi/chill.conf
+    echo "chill.conf installed to ~/.config/rofi/chill.conf (old file moved to chill.conf.old)"
     echo ""
 else
-    cp rofi/ribbon.rasi ~/.config/rofi/ribbon.rasi
-    echo "ribbon.rasi installed to ~/.config/rofi/ribbon.rasi"
+    cp rofi/chill.conf ~/.config/rofi/chill.conf
+    echo "chill.conf installed to ~/.config/rofi/chill.conf"
     echo ""
 fi
 
@@ -146,15 +147,15 @@ else
     echo ""
 fi
 
-# Alacritty
-if [ -e ~/.config/alacritty/alacritty.yml ]; then
-    mv ~/.config/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml.old
-    cp alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
-    echo "alacritty.yml installed to ~/.config/alacritty/alacritty.yml (old config moved to alacritty.yml.old"
+# kitty
+if [ -e ~/.config/kitty/kitty.conf ]; then
+    mv ~/.config/kitty/kitty.conf ~/.config/kitty/kitty.conf.old
+    cp kitty/kitty.conf ~/.config/kitty/kitty.conf
+    echo "kitty.conf installed to ~/.config/kitty/kitty.conf (old config moved to kitty.conf.old)"
     echo ""
 else  
-    cp alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
-    echo "alacritty.yml installed to ~/.config/alacritty/alacritty.yml"
+    cp kitty/kitty.conf ~/.config/kitty/kitty.conf
+    echo "kitty.conf installed to ~/.config/kitty/kitty.conf"
     echo ""
 fi
 
@@ -171,15 +172,15 @@ else
 fi
 
 
-# Compton
-if [ -e ~/.config/compton/compton.conf ]; then
-    mv ~/.config/compton/compton.conf ~/.config/compton/compton.conf
-    cp compton/compton.conf ~/.config/compton/compton.conf
-    echo "compton config installed to ~/.config/compton/compton.conf (old config moved to compton.conf.old)"
+# Picom
+if [ -e ~/.config/picom/picom.conf ]; then
+    mv ~/.config/picom/picom.conf ~/.config/picom/picom.conf
+    cp picom/picom.conf ~/.config/picom/picom.conf
+    echo "picom config installed to ~/.config/picom/picom.conf (old config moved to picom.conf.old)"
     ehco ""
 else    
-    cp compton/compton.conf ~/.config/compton/compton.conf
-    echo "compton config installed to ~/.config/compton/compton.conf"
+    cp picom/picom.conf ~/.config/picom/picom.conf
+    echo "picom config installed to ~/.config/picom/picom.conf"
     echo ""
 fi
 
