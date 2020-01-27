@@ -1,8 +1,8 @@
 # White-rIce
 
-![white-rIce_empty](https://raw.githubusercontent.com/Jfeatherstone/i3-themes/master/michaelsoft/white-rIce_empty.png)
+![white-rIce_empty](https://raw.githubusercontent.com/Jfeatherstone/i3-themes/master/white-rIce/white-rIce_empty.png)
 
-![white-rIce_busy](https://raw.githubusercontent.com/Jfeatherstone/i3-themes/master/michaelsoft/white-rIce_busy.png)
+![white-rIce_busy](https://raw.githubusercontent.com/Jfeatherstone/i3-themes/master/white-rIce/white-rIce_busy.png)
 
 
 ### Features

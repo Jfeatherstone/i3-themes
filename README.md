@@ -11,3 +11,6 @@ For more detailed information, see each individual theme!
 
 #### Michaelsoft
 ![michaelsoft](https://raw.githubusercontent.com/Jfeatherstone/i3-themes/master/michaelsoft/michaelsoft_busy.png)
+
+#### white-rIce
+![white-rIce](https://raw.githubusercontent.com/Jfeatherstone/i3-themes/master/white-rIce/white-rIce_busy.png)
