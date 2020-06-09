@@ -1,8 +1,8 @@
 # White-rIce
 
-![white-rIce_empty](https://raw.githubusercontent.com/Jfeatherstone/i3-themes/master/white-rIce/white-rIce_empty.png)
+![bebop_empty](https://raw.githubusercontent.com/Jfeatherstone/i3-themes/master/bebop/bebop_empty.png)
 
-![white-rIce_busy](https://raw.githubusercontent.com/Jfeatherstone/i3-themes/master/white-rIce/white-rIce_busy.png)
+![bebop_busy](https://raw.githubusercontent.com/Jfeatherstone/i3-themes/master/bebop/bebop_busy.png)
 
 
 ### Features
@@ -13,10 +13,19 @@
 
 ### Dependencies
 - Python >= 3.7
+- polybar
 - dunst
 - yad
+- kitty
+- feh
+- paplay
 - galendae
-- compton
+- picom (compton)
+- uim (Anthy for Japanese text)
+- vim and Vundle (or just adapt the vimrc for a different manager)
+- Arandr (not required, but has a keybind)
+- pavu (not required, but has a keybind)
+
 
 ### Installation
 
@@ -24,7 +33,7 @@ Run the following commands to install all files to their proper locations. The i
 
 ```
 git clone https://github.com/Jfeatherstone/i3-themes
-cd i3-themes/white-rIce/
+cd i3-themes/bebop/
 ./install.sh
 ```
 
@@ -37,7 +46,7 @@ Some keybindings and/or options may not work since this is specifically configur
 ### Credits
 
 ##### Wallpaper
-Originally from https://www.pixiv.net/en/artworks/55005860
+Originally from https://www.pixiv.net/en/artworks/55005860 (Link seems to be dead, I'll try and find wherever it is posted now)
 
 
 ##### Polybar Script
