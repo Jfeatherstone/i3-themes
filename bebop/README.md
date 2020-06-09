@@ -60,5 +60,10 @@ Unmodified, taken from: https://github.com/Jvanrhijn/polybar-spotify
 ##### Package Updates Script
 Unmodified, taken from: https://github.com/adi1090x/polybar-themes
 
+
 ##### Rofi Theme
 Not sure yet
+
+
+##### i3-agenda
+Unmodified, taken from: https://github.com/rosenpin/i3-agenda
