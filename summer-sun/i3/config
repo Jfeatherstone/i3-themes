@@ -271,5 +271,5 @@ for_window [title="yad_powermenu"] floating enable
 for_window [title="yad_vpnmenu"] floating enable
 for_window [class="MATLAB R2019b - academic use"] floating enable
 
-# Make the windows startup noise (absolutely required)
+# Play the windows startup sound
 exec paplay ~/.config/i3/xp_startup.ogg

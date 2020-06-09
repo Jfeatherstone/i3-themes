@@ -19,7 +19,7 @@ if [ $1 == "add" ]; then
         newBrightness=1.0
     fi
 
-    xrandr --output eDP-1 --brightness $newBrightness
+    xrandr --output eDP-1-1 --brightness $newBrightness
 
     newBrightness="$(echo $(echo "$newBrightness * 100" | bc) | sed -e 's/\.[0-9]*//')"
 
@@ -33,7 +33,7 @@ elif [ $1 == "sub" ]; then
         newBrightness="0.0"
     fi
 
-    xrandr --output eDP-1 --brightness $newBrightness
+    xrandr --output eDP-1-1 --brightness $newBrightness
 
     newBrightness="$(echo $(echo "$newBrightness * 100" | bc) | sed -e 's/\.[0-9]*//')"
 
@@ -41,7 +41,7 @@ elif [ $1 == "sub" ]; then
 
 elif [ $1 == "set" ]; then
 
-    xrandr --output eDP-1 --brightness $2
+    xrandr --output eDP-1-1 --brightness $2
     dunstify -a "changeBrightness" -u low -i laptop -r $msgID "Brightness: $2" ""
 else
     echo "Invalid input, see /usr/bin/changeBrightness for more info"

@@ -20,7 +20,7 @@ set $TERMINAL kitty
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
+font pango:Bitstream Vera Sans 10
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
@@ -103,6 +103,15 @@ bindsym $mod+Shift+q kill
 # start rofi (a program launcher)
 bindsym $mod+space exec ~/.config/rofi/./rofi_script
 
+# Start pavu
+bindsym $mod+p exec pavucontrol
+
+# Start arandr
+bindsym $mod+Shift+a exec arandr
+
+# Reload polybar
+bindsym $mod+Shift+p exec ~/.config/polybar/scripts/./restart.sh
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -162,6 +171,9 @@ bindsym $mod+f fullscreen toggle
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
+
+# set the next clicked on window to be fully opaque
+bindsym $mod+t exec transset-df 1
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -254,14 +266,14 @@ bindsym $mod+Shift+g exec galendae -c ~/.config/galendae/config
 # Set the background image using feh
 exec --no-startup-id feh --bg-center ~/.config/i3/wallpaper.jpg
 
+# Startup polybar
+exec polybar -c ~/.config/polybar/config main
+
 # Start picom, the compositor, so that transparency (among other thigns) works
 exec picom -b
 
 # Start dunst, the notification manager
 exec dunst
-
-# Start conky
-exec conky
 
 # Start lightscreen
 exec lightscreen -h
@@ -269,7 +281,25 @@ exec lightscreen -h
 # Make some custom yad windows float
 for_window [title="yad_powermenu"] floating enable
 for_window [title="yad_vpnmenu"] floating enable
-for_window [class="MATLAB R2019b - academic use"] floating enable
+
+# And for generic windows when I am testing code
+for_window [title="float"] floating enable
+
+# Make pavu float
+for_window [class="Pavucontrol"] floating enable
+
+# Make arandr float
+for_window [class="Arandr"] floating enable
+
+# And matlab stuff
+for_window [class="MATLAB R2020a - academic use"] floating enable
 
 # Make the windows startup noise (absolutely required)
 exec paplay ~/.config/i3/xp_startup.ogg
+
+# Setup SCIM to type hiragana
+exec export XMODIFIERS=@im=uim
+exec export GTK_IM_MODULE=uim
+exec export QT_IM_MODULE=uim
+exec uim-xim
+exec uim-toolbar-gtk3
