@@ -16,6 +16,7 @@
 # galendae/config -> ~/.config/galendae/config (preserves old config in config.old if it exists)
 # kitty/kitty.conf -> ~/.config/kitty/kitty.conf (preserves old config in kitty.conf.old if it exists)
 # vim/vimrc -> ~/.vimrc (preserves old config in .vimrc.old if it exists)
+# firefox/chrome/* -> $CHROME_DIRECTORY/ (preserves userChrome and userContent if they exist)
 
 # changeBrightness
 if [ -e /usr/bin/changeBrightness ]; then

@@ -1,0 +1,3 @@
+# Runs my custom rofi script, alternative to dmenu
+rofi -show drun -modi "run,window,drun,ssh" -config ~/.config/rofi/chill.conf -terminal kitty
+
