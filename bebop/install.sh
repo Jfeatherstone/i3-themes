@@ -71,13 +71,13 @@ if [ ! -e ~/.config/galendae ]; then
     echo ""
 fi
 
-if [ ! -e ~/.config/picom]; then
+if [ ! -e ~/.config/picom ]; then
     mkdir ~/.config/picom
     echo "Created ~/.config/picom directory"
     echo ""
 fi
 
-if [ ! -e ~/.config/kitty]; then
+if [ ! -e ~/.config/kitty ]; then
     mkdir ~/.config/kitty
     echo "Created ~/.config/kitty directory"
     echo ""
@@ -139,7 +139,7 @@ fi
 # rofi_script
 if [ -e ~/.config/rofi/rofi_script ]; then
     mv ~/.config/rofi/rofi_script ~/.config/rofi/rofi_script.old
-    mv rofi/rofi_script ~/.config/rofi/rofi_script
+    cp rofi/rofi_script ~/.config/rofi/rofi_script
     echo "rofi_script installed to ~/.config/rofi/rofi_script (old script moved to rofi_script.old)"
     echo ""
 else
@@ -165,7 +165,7 @@ if [ -e ~/.config/galendae/config ]; then
     mv ~/.config/galendae/config ~/.config/galendae/config.old
     cp galendae/config ~/.config/galendae/config
     echo "galendae config installed to ~/.config/galendae/config (old config moved to config.old)"
-    ehco ""
+    echo ""
 else
     cp galendae/config ~/.config/galendae/config
     echo "galendae config installed to ~/.config/galendae/config"
@@ -175,10 +175,10 @@ fi
 
 # Picom
 if [ -e ~/.config/picom/picom.conf ]; then
-    mv ~/.config/picom/picom.conf ~/.config/picom/picom.conf
+    mv ~/.config/picom/picom.conf ~/.config/picom/picom.conf.old
     cp picom/picom.conf ~/.config/picom/picom.conf
     echo "picom config installed to ~/.config/picom/picom.conf (old config moved to picom.conf.old)"
-    ehco ""
+    echo ""
 else    
     cp picom/picom.conf ~/.config/picom/picom.conf
     echo "picom config installed to ~/.config/picom/picom.conf"
@@ -191,7 +191,7 @@ if [ -e ~/.vimrc ]; then
     cp vim/vimrc ~/.vimrc
     echo "vim config installed to ~/.vimrc (old config moved to ~/.vimrc.old)"
     echo "You may need to run :PluginInstall to update Vundle plugins"
-    ehco ""
+    echo ""
 else    
     cp vim/vimrc /.vimrc
     echo "vim config installed to ~/.vimrc"
@@ -199,6 +199,24 @@ else
     echo ""
 fi
 
+# Firefox
+# We have to first find the chrome directory though
+# This was taken from https://github.com/mut-ex/minimal-functional-fox
+MOZILLA_USER_DIRECTORY="$(find ~/.mozilla/firefox -maxdepth 1 -type d -regextype egrep -regex '.*[a-zA-Z0-9]+.default-release')"
+CHROME_DIRECTORY="$(find $MOZILLA_USER_DIRECTORY -maxdepth 1 -type d -name 'chrome')"
+
+if [ -e $CHROME_DIRECTORY/userChrome.css ]; then
+    mv $CHROME_DIRECTORY/userChrome.css $CHROME_DIRECTORY/userChrome.css.old
+    echo "Firefox userChrome.css moved to userChrome.css.old"
+    echo ""
+fi
+if [ -e $CHROME_DIRECTORY/userContent.css ]; then
+    mv $CHROME_DIRECTORY/userContent.css $CHROME_DIRECTORY/userContent.css.old
+    echo "Firefox userContent.css moved to userContent.css.old"
+    echo ""
+fi
+# Now move all of the stuff
+cp firefox/chrome/* $CHROME_DIRECTORY/
 
 echo "Installation completed! This directory can now be safely deleted!"
 echo "If you have any issues with my theme, or want to recommend edits, please submit an issue on the Github page"

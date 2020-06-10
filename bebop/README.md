@@ -1,4 +1,4 @@
-# White-rIce
+# Bebop
 
 ![bebop_empty](https://raw.githubusercontent.com/Jfeatherstone/i3-themes/master/bebop/bebop_empty.png)
 
