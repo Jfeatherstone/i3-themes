@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-BAR_ICON=""
+#BAR_ICON=""
 NOTIFY_ICON=/usr/share/icons/Papirus/32x32/apps/system-software-update.svg
 
 get_total_updates() { UPDATES=$(checkupdates 2>/dev/null | wc -l); }
@@ -12,7 +12,7 @@ while true; do
     if hash notify-send &>/dev/null; then
         if (( UPDATES > 50 )); then
             notify-send -u critical -i $NOTIFY_ICON \
-                "Its time to update kiddo...Not like you have anything better to do" "$UPDATES New packages"
+                "You really need to update!!" "$UPDATES New packages"
         elif (( UPDATES > 25 )); then
             notify-send -u normal -i $NOTIFY_ICON \
                 "You should update soon" "$UPDATES New packages"
@@ -25,15 +25,10 @@ while true; do
     # when there are updates available
     # every 10 seconds another check for updates is done
     while (( UPDATES > 0 )); do
-        #if (( UPDATES == 1 )); then
-        #    echo " $UPDATES Update"
-        #elif (( UPDATES > 1 )); then
-        #    echo " $UPDATES Updates"
-        #else
         if (( UPDATES == 1 )); then
-            echo " $UPDATES"
+            echo "$UPDATES Update"
         elif (( UPDATES > 1 )); then
-            echo " $UPDATES"
+            echo "$UPDATES Updates"
         else
             echo $BAR_ICON
         fi

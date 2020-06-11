@@ -27,13 +27,19 @@ cp ~/.config/i3/wallpaper.jpg i3/
 cp ~/.config/picom/picom.conf picom/
 
 # Copy polybar
+rm -r polybar/
 cp -r ~/.config/polybar .
+rm polybar/i3agenda_google_token.pickle
+rm polybar/scripts/credentials.json
 
 # Copy galendae config
 cp ~/.config/galendae/config galendae/config
 
 # Copy vim config
 cp ~/.vimrc vim/vimrc
+
+# Copy kitty
+cp ~/.config/kitty/kitty.conf kitty/kitty.conf
 
 # Find the firefox user directory and grab the css
 # This was taken from https://github.com/mut-ex/minimal-functional-fox

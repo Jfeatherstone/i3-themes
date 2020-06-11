@@ -77,8 +77,8 @@ gaps inner 10
 # We set most of these to transparent since I don't want to mess with settings that
 # are set for each specific program
 # class                 border  backgr. text    indicator child_border
-client.focused          #00000000 #00000000 #00000000 #FFFFFFFF #FFFFFFAA
-client.unfocused        #00000000 #00000000 #00000000 #FFFFFFFF #FFFFFFAA
+client.focused          #00000000 #00000000 #00000000 #FFFFFFFF #00FF00AA
+client.unfocused        #00000000 #00000000 #00000000 #FFFFFFFF #44FF44AA
 
 #########################
 ### CORE KEYBINDS
