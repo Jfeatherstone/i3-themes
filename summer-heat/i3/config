@@ -256,6 +256,12 @@ bindsym $mod+Shift+g exec galendae -c ~/.config/galendae/config
 # Open a window with the weather
 bindsym $mod+Shift+w exec kitty --hold curl wttr.in/Old+Saybrook
 
+# Open a color picker
+bindsym $mod+Shift+x exec gcolor3
+
+# Open cheatsheet
+bindsym $mod+Shift+z exec zathura ~/.config/i3/i3_cheatsheet.pdf
+
 ##########################
 # Startup stuff
 ##########################
@@ -292,6 +298,9 @@ for_window [class="Arandr"] floating enable
 # This is so that figures are automatically put in floating mode so that
 # the dimensions you define in a .m file won't be immediately overridden
 for_window [class="MATLAB R2020a - academic use"] floating enable
+
+# Make gcolor float
+for_window [class="Color picker"] floating enable
 
 # Make the windows startup noise (absolutely required)
 exec paplay ~/.config/i3/xp_startup.ogg
