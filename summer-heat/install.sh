@@ -10,8 +10,7 @@
 # i3/config -> ~/.config/i3/config (preserves old config in config.old if it exists)
 # i3/wallpaper.jpg -> ~/.config/i3/config (preserves old image in wallpaper.jpg.old if it exists)
 # dunst/dunstrc -> ~/.config/dunst/dunstrc (preserves old config in dunstrc.old if it exists)
-# rofi/ribbon.rasi -> ~/.config/rofi/ib.rasi (preserves old config in ib.rasi.old if it exists)
-# rofi/rofi_script -> ~/.config/rofi/rofi_script (preserves old script in rofi_script.old if it exists)
+# rofi/rofi_launcher.sh-> ~/.config/rofi/rofi_launcher.sh (preserves old script in rofi_launcher.sh.old if it exists)
 # compton/compton.conf -> ~/.config/compton/compton.conf (preserves old config in compton.conf.old if it exists)
 # galendae/config -> ~/.config/galendae/config (preserves old config in config.old if it exists)
 # kitty/kitty.conf -> ~/.config/kitty/kitty.conf (preserves old config in kitty.conf.old if it exists)
@@ -125,27 +124,15 @@ else
     echo ""
 fi
 
-# chill.conf (rofi config)
-if [ -e ~/.config/rofi/chill.conf ]; then
-    mv ~/.config/rofi/chill.conf ~/.config/rofi/chill.conf.old
-    cp rofi/chill.conf ~/.config/rofi/chill.conf
-    echo "chill.conf installed to ~/.config/rofi/chill.conf (old file moved to chill.conf.old)"
-    echo ""
-else
-    cp rofi/chill.conf ~/.config/rofi/chill.conf
-    echo "chill.conf installed to ~/.config/rofi/chill.conf"
-    echo ""
-fi
-
 # rofi_script
-if [ -e ~/.config/rofi/rofi_script ]; then
-    mv ~/.config/rofi/rofi_script ~/.config/rofi/rofi_script.old
-    cp rofi/rofi_script ~/.config/rofi/rofi_script
-    echo "rofi_script installed to ~/.config/rofi/rofi_script (old script moved to rofi_script.old)"
+if [ -e ~/.config/rofi/rofi_launcher.sh ]; then
+    mv ~/.config/rofi/rofi_launcher.sh~/.config/rofi/rofi_launcher.sh.old
+    cp rofi/rofi_launcher.sh ~/.config/rofi/rofi_launcher.sh
+    echo "rofi_launcher.sh installed to ~/.config/rofi/rofi_launcher.sh (old script moved to rofi_launcher.sh.old)"
     echo ""
 else
-    mv rofi/rofi_script ~/.config/rofi/rofi_script
-    echo "rofi_script installed to ~/.config/rofi/rofi_script"
+    mv rofi/rofi_launcher.sh ~/.config/rofi/rofi_launcher.sh
+    echo "rofi_launcher.sh installed to ~/.config/rofi/rofi_launcher.sh"
     echo ""
 fi
 

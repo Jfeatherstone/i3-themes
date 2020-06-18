@@ -10,11 +10,9 @@ cp ~/.config/i3/config i3/
 # Copy dunst config
 cp ~/.config/dunst/dunstrc dunst/
 
-# Copy rofi config
-cp ~/.config/rofi/chill.conf rofi/
-
-# Copy rofi script
-cp ~/.config/rofi/rofi_script rofi/
+# Copy rofi config/script
+rm rofi/*
+cp ~/.config/rofi/rofi_launcher.sh rofi/
 
 # Copy both changeBrightness and changeVolume scripts
 cp /usr/bin/changeVolume scripts/
@@ -30,7 +28,7 @@ cp ~/.config/picom/picom.conf picom/
 rm -r polybar/
 cp -r ~/.config/polybar .
 rm polybar/i3agenda_google_token.pickle
-rm polybar/scripts/credentials.json
+rm polybar/credentials.json
 
 # Copy galendae config
 cp ~/.config/galendae/config galendae/config

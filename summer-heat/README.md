@@ -1,4 +1,4 @@
-# Secret World
+# Summer Heat
 
 ### Features
 - Custom volume and brightness scripts with notifications using dunst
@@ -28,7 +28,7 @@ Run the following commands to install all files to their proper locations. The i
 
 ```
 git clone https://github.com/Jfeatherstone/i3-themes
-cd i3-themes/secret-world/
+cd i3-themes/summer-heat/
 ./install.sh
 ```
 
@@ -41,21 +41,16 @@ Some keybindings and/or options may not work since this is specifically configur
 ### Credits
 
 ##### Wallpaper
-Originally from: https://wall.alphacoders.com/by_sub_category.php?id=240973&name=The+Secret+World+Of+Arrietty+Wallpapers
+From ドレミファ空次郎 on Pixiv: https://www.pixiv.net/en/artworks/81716003
 
-##### Polybar Script
-
+##### Polybar Config
+Modified version of polybar-8 from: https://github.com/adi1090x/polybar-themes
 
 ##### Spotify Script
 Unmodified, taken from: https://github.com/Jvanrhijn/polybar-spotify
 
-
-##### Package Updates Script
-Unmodified, taken from: https://github.com/adi1090x/polybar-themes
-
+##### GCal Polybar Script
+Unmodified, taken from: https://github.com/rosenpin/i3-agenda
 
 ##### Rofi Theme
 
-
-##### i3-agenda
-Unmodified, taken from: https://github.com/rosenpin/i3-agenda

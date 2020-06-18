@@ -91,7 +91,7 @@ bindsym $mod+Return exec $TERMINAL
 bindsym $mod+Shift+q kill
 
 # start rofi (a program launcher)
-bindsym $mod+space exec ~/.config/rofi/./rofi_script
+bindsym $mod+space exec ~/.config/rofi/./rofi_launcher.sh
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -244,7 +244,7 @@ bindsym $mod+p exec pavucontrol
 bindsym $mod+Shift+a exec arandr
 
 # Reload polybar
-bindsym $mod+Shift+p exec ~/.config/polybar/scripts/./restart.sh
+bindsym $mod+Shift+p exec ~/.config/polybar/scripts/./launch
 
 # Create a pop up calendar using galendae
 bindsym $mod+Shift+g exec galendae -c ~/.config/galendae/config
@@ -252,7 +252,10 @@ bindsym $mod+Shift+g exec galendae -c ~/.config/galendae/config
 # set the next clicked on window to be fully opaque
 # Doesn't work yet
 #bindsym $mod+t exec transset-df 1
-#
+
+# Open a window with the weather
+bindsym $mod+Shift+w exec kitty --hold curl wttr.in/Old+Saybrook
+
 ##########################
 # Startup stuff
 ##########################
@@ -261,7 +264,7 @@ bindsym $mod+Shift+g exec galendae -c ~/.config/galendae/config
 exec --no-startup-id feh --bg-center ~/.config/i3/wallpaper.jpg
 
 # Startup polybar
-exec polybar -c ~/.config/polybar/config main
+exec ~/.config/polybar/./launch.sh
 
 # Start picom, the compositor, so that transparency (among other thigns) works
 exec picom -b
