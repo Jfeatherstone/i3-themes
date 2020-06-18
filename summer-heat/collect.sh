@@ -7,6 +7,9 @@
 # Copy the newest version of my i3 config
 cp ~/.config/i3/config i3/
 
+# Copy the i3 cheat sheet
+cp ~/.config/i3/i3_cheatsheet.pdf i3/
+
 # Copy dunst config
 cp ~/.config/dunst/dunstrc dunst/
 

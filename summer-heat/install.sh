@@ -9,6 +9,7 @@
 # scripts/changeVolume -> /usr/bin/ (doesn't overwrite)
 # i3/config -> ~/.config/i3/config (preserves old config in config.old if it exists)
 # i3/wallpaper.jpg -> ~/.config/i3/config (preserves old image in wallpaper.jpg.old if it exists)
+# i3/i3_cheatsheet.pdf -> ~/.config/i3/i3_cheatsheet.pdf (preserves old pdf in i3_cheatsheet.pdf.old if it exists)
 # dunst/dunstrc -> ~/.config/dunst/dunstrc (preserves old config in dunstrc.old if it exists)
 # rofi/rofi_launcher.sh-> ~/.config/rofi/rofi_launcher.sh (preserves old script in rofi_launcher.sh.old if it exists)
 # compton/compton.conf -> ~/.config/compton/compton.conf (preserves old config in compton.conf.old if it exists)
@@ -106,8 +107,21 @@ if [ -e ~/.config/i3/wallpaper.jpg ]; then
     echo "wallpaper.jpg installed to ~/.config/i3/wallpaper.jpg (old image moved to wallpaper.jpg.old)"
     echo ""
 else
-    cp i3/wallpaper.jph ~/.config/i3/wallpaper.jpg
+    cp i3/wallpaper.jpg ~/.config/i3/wallpaper.jpg
     echo "wallpaper.jpg installed to ~/.config/i3/wallpaper.jpg"
+    echo ""
+fi
+
+# i3_cheatsheet
+if [ -e ~/.config/i3/i3_cheatsheet.pdf ]; then
+    # Move the old file
+    mv ~/.config/i3/i3_cheatsheet.pdf ~/.config/i3/i3_cheatsheet.pdf.old
+    cp i3/i3_cheatsheet.pdf ~/.config/i3/i3_cheatsheet.pdf
+    echo "i3_cheatsheet.pdf installed to ~/.config/i3/wallpaper.jpg (old image moved to wallpaper.jpg.old)"
+    echo ""
+else
+    cp i3/i3_cheatsheet.pdf ~/.config/i3/i3_cheatsheet.pdf
+    echo "i3_cheatsheet.pdf installed to ~/.config/i3/wallpaper.jpg"
     echo ""
 fi
 
