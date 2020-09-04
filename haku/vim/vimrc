@@ -1,0 +1,59 @@
+" Vundle stuff
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'ycm-core/YouCompleteMe'
+Plugin 'ervandew/supertab'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'vim-scripts/indentpython.vim'
+Plugin 'chrisbra/Colorizer'
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+" Setup tabs
+set expandtab
+set softtabstop=4
+set shiftwidth=4
+
+" Make colors look better for dark background
+set background=dark
+
+" Enable line numbers
+set number
+
+" Enable syntax
+syntax on
+
+set encoding=utf-8
+
+"execute pathogen#infect()
+"call pathogen#helptags()
+
+" Enable spell check
+set spelllang=en_us
+set spellfile=~/.vim/spell/en_us.utf-8.add
+
+" Enable file specific settings
+filetype plugin on
+
+" Enable spell check for markdown files by default
+autocmd FileType markdown,tex,textile setlocal spell
+
+" Enable the mouse
+"set mouse=a
+
+" Remove arrow keybinds
+map <Left> :"Don't use those!"
+map <Right> :"Don't use those!"
+map <Up> :"Don't use those!"
+map <Down> :"Don't use those!"
+map <C-H> <esc>:ColorToggle <Return>

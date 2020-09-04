@@ -1,5 +1,9 @@
 # Summer Heat
 
+![summer-heat_empty](https://raw.githubusercontent.com/Jfeatherstone/i3-themes/master/summer-heat/summer-heat_empty.png)
+
+![summer-heat_busy](https://raw.githubusercontent.com/Jfeatherstone/i3-themes/master/summer-heat/summer-heat_busy.png)
+
 ### Features
 - Custom volume and brightness scripts with notifications using dunst
 - Spotify current music in polybar

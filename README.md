@@ -17,3 +17,6 @@ For more detailed information, see each individual theme!
 
 #### Bebop
 ![bebop](https://raw.githubusercontent.com/Jfeatherstone/i3-themes/master/bebop/bebop_busy.png)
+
+#### Summer-Heat
+![summer-heat](https://raw.githubusercontent.com/Jfeatherstone/i3-themes/master/summer-heat/summer-heat_busy.png)
