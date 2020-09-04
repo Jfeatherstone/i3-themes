@@ -244,7 +244,7 @@ bindsym $mod+p exec pavucontrol
 bindsym $mod+Shift+a exec arandr
 
 # Reload polybar
-bindsym $mod+Shift+p exec ~/.config/polybar/scripts/./launch
+bindsym $mod+Shift+p exec ~/.config/polybar/./launch.sh
 
 # Create a pop up calendar using galendae
 bindsym $mod+Shift+g exec galendae -c ~/.config/galendae/config

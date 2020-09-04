@@ -20,13 +20,13 @@ y_offset=0
 ### COLORS
 
 # Window background specified with CSS color
-background_color=#EDEDED
+background_color=#FEFFDD
 # Text color specified with CSS color
 foreground_color=#333333
 # Dates of previous and following months, colored with CSS
 fringe_date_color=#23ab21
 # Highlight color for the current date
-highlight_color=#12b2fa
+highlight_color=#AAAAAA
 
 ### FONTS
 
